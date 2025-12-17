@@ -7,14 +7,16 @@
 //
 //= require webjars/dist/jquery.js
 //= require webjars/dist/js/bootstrap.bundle.js
+//= require popper.min
+//= require ocb
 //= require_self
 
-if (typeof jQuery !== 'undefined') {
-    (function($) {
-        $('#spinner').ajaxStart(function() {
-            $(this).fadeIn();
-        }).ajaxStop(function() {
-            $(this).fadeOut();
-        });
-    })(jQuery);
-}
+// if (typeof jQuery !== 'undefined') {
+//     (function($) {
+//         $('#spinner').ajaxStart(function() {
+//             $(this).fadeIn();
+//         }).ajaxStop(function() {
+//             $(this).fadeOut();
+//         });
+//     })(jQuery);
+// }

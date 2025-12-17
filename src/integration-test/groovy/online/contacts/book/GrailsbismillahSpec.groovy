@@ -1,4 +1,4 @@
-package oracle.api
+package online.contacts.book
 import grails.plugin.geb.ContainerGebSpec
 import grails.testing.mixin.integration.Integration
 

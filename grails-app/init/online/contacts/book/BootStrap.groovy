@@ -1,4 +1,4 @@
-package oracle.api
+package online.contacts.book
 
 class BootStrap {
 
