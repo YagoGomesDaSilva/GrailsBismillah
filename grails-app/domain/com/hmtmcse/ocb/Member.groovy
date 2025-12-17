@@ -33,6 +33,9 @@ class Member {
 
 
     /*
+    Qualquer classe Groovy criada dentro dessa pasta domain é automaticamente transformada pelo Grails em uma entidade persistente
+    (uma tabela no banco de dados) e ganha superpoderes do GORM (Grails Object Relational Mapping).
+
     GORM Events são como "gatilhos" (triggers) que existem dentro do código da sua aplicação Grails.
     Eles permitem que você execute lógicas específicas automaticamente sempre que um objeto de domínio
     (uma tabela do banco) sofre alguma alteração, como ser salvo, atualizado ou deletado.

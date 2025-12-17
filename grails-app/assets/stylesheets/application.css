@@ -10,5 +10,6 @@
 *= require webjars/bootstrap/5.3.3/dist/css/bootstrap.css
 *= require webjars/bootstrap-icons/1.11.3/font/bootstrap-icons.css
 *= require style
+*= require font-awesome/css/all.min
 *= require_self
 */

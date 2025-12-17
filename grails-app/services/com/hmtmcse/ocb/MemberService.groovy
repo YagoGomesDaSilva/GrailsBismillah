@@ -2,7 +2,15 @@ package com.hmtmcse.ocb
 
 import grails.web.servlet.mvc.GrailsParameterMap
 
+import grails.gorm.transactions.Transactional
 
+// Adicionamos @Transactional porque usamos '.save(flush: true)'.
+// O 'flush: true' força a escrita imediata no banco, e o Hibernate
+// proíbe operações de escrita sem uma transação ativa aberta.
+// Corrige o erro 'TransactionRequiredException'.
+// Services no Grails não são transacionais por padrão. Esta anotação
+// abre a sessão necessária para persistir dados (INSERT/UPDATE/DELETE).
+@Transactional
 class MemberService {
 
     def save(GrailsParameterMap params) {
@@ -17,6 +25,7 @@ class MemberService {
         return response
     }
 
+
     def update(Member member, GrailsParameterMap params) {
         member.properties = params
         def response = AppUtil.saveResponse(false, member)
@@ -29,9 +38,11 @@ class MemberService {
         return response
     }
 
+
     def getById(Serializable id) {
         return Member.get(id)
     }
+
 
     def list(GrailsParameterMap params) {
         params.max = params.max ?: GlobalConfig.itemsPerPage()
@@ -45,6 +56,7 @@ class MemberService {
         }
         return [list: memberList, count: Member.count()]
     }
+
 
     def delete(Member member) {
         try {

@@ -72,5 +72,5 @@ grails:
     default:
       codec: html
   codegen:
-    defaultPackage: oracle.api
+    defaultPackage: online.contacts.book
   profile: web
