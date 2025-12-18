@@ -3,7 +3,7 @@
 <div class="card">
     <div class="card-header">
         <g:message code="contact.group" args="['List Of']"/>
-        <span class="float-right">
+        <span class="float-end">
             <div class="btn-group">
                 <g:link controller="contactGroup" action="create" class="btn btn-success"><g:message code="create"/></g:link>
                 <g:link controller="contactGroup" action="index" class="btn btn-primary"><g:message code="reload"/></g:link>
