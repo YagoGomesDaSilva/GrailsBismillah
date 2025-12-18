@@ -8,6 +8,11 @@
                     <h1 class="text-center login-title">Contacts Book Member Login</h1>
                     <div class="account-wall">
                         <g:img dir="images" file="grails.svg" class="profile-img"/>
+                        <g:if test="${flash.message}">
+                            <div class="alert alert-danger" role="alert">
+                                ${flash.message.info}
+                            </div>
+                        </g:if>
                         <g:form controller="authentication" action="doLogin" class="form-signin">
                             <g:textField name="email" class="form-control" placeholder="Email" required="required" />
                             <g:passwordField name="password" class="form-control" placeholder="Password" required="required" />
