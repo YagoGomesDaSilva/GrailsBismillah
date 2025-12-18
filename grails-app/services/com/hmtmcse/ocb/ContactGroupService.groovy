@@ -49,8 +49,13 @@ class ContactGroupService {
 
 
     def getGroupList(){
+        def sessionMember = authenticationService.getMember()
+        if (!sessionMember) {
+            return []
+        }
+        Member currentMember = Member.get(sessionMember.id)
         return ContactGroup.createCriteria().list {
-            eq("member", authenticationService.getMember())
+            eq("member", currentMember)
         }
     }
 
