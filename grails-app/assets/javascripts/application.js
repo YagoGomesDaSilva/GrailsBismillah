@@ -6,4 +6,5 @@
 // to create separate JavaScript files as needed.
 //
 //= require ocb
+//= require ocb.ajax
 //= require_self

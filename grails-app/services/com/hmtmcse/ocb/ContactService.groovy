@@ -8,6 +8,7 @@ import grails.gorm.transactions.Transactional
 class ContactService {
 
     AuthenticationService authenticationService
+    ContactDetailsService contactDetailsService
 
     def save(GrailsParameterMap params, HttpServletRequest request) {
         def sessionMember = authenticationService.getMember()
@@ -40,6 +41,7 @@ class ContactService {
             contact.save(flush: true, failOnError: true)
             if (!contact.hasErrors()){
                 response.isSuccess = true
+                contactDetailsService.createOrUpdateDetails(contact, params)
             }
         } else {
             println("ERRO de validação: ${contact.errors}")
@@ -54,6 +56,7 @@ class ContactService {
             contact.save(flush: true)
             if (!contact.hasErrors()){
                 response.isSuccess = true
+                contactDetailsService.createOrUpdateDetails(contact, params)
             }
         }
         return response
