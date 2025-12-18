@@ -8,7 +8,10 @@
 //= require webjars/dist/jquery.js
 //= require webjars/dist/js/bootstrap.bundle.js
 //= require popper.min
+//= require jquery-confirm.min
 //= require ocb
+//= require ocb.message.box
+//= require ocb.init
 //= require_self
 
 // if (typeof jQuery !== 'undefined') {

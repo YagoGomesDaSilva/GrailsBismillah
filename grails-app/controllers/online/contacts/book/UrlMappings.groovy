@@ -1,6 +1,7 @@
 package online.contacts.book
 
 class UrlMappings {
+
     static mappings = {
         "/$controller/$action?/$id?(.$format)?"{
             constraints {
@@ -8,7 +9,7 @@ class UrlMappings {
             }
         }
 
-        "/"(view:"/index")
+        "/"(controller: "dashboard", action: "index")
         "500"(view:'/error')
         "404"(view:'/notFound')
     }
