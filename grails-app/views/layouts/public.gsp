@@ -28,7 +28,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark rounded">
             <a class="navbar-brand ms-3" href="#">Grails Online Contacts Book</a>
-            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
                     data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false"
                     aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

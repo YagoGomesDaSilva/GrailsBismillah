@@ -16,11 +16,16 @@ class UIHelperTagLib {
     }
 
     def memberActionMenu = { attrs, body ->
-        out << '<li class="nav-item dropdown show">'
-        out << g.link(class:"nav-link dropdown-toggle", "data-toggle":"dropdown"){authenticationService.getMemberName()}
-        out << '<div class="dropdown-menu">'
+        out << '<li class="nav-item dropdown">'
+        out << '<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">'
+        out << authenticationService.getMemberName()
+        out << '</a>'
+        out << '<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">'
+        out << '<li>'
         out << g.link(controller: "authentication", action: "logout", class: "dropdown-item"){g.message(code:"logout")}
-        out << "</div></li>"
+        out << '</li>'
+        out << '</ul>'
+        out << '</li>'
     }
 
     def leftNavigation = { attrs, body ->
