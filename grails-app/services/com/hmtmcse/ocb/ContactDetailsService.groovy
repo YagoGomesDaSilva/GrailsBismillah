@@ -6,7 +6,7 @@ import grails.gorm.transactions.Transactional
 class ContactDetailsService {
 
 
-    private def getContactDetailsParamsParse(Contact contact, def params, Integer id = null) {
+    private static def getContactDetailsParamsParse(Contact contact, def params, Integer id = null) {
         def map = [
                 id     : null,
                 mobile : null,

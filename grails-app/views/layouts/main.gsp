@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <asset:link rel="icon" href="favicon.ico" type="image/x-ico"/>
     <asset:stylesheet src="application.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.css">
 
     <g:layoutHead/>
 </head>
@@ -47,14 +48,102 @@
     </div>
 </div>
 
-<asset:javascript src="application.js"/>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.js"></script>
+<asset:javascript src="application.js"/>
+
+<script type="text/javascript">
+    var BASE_URL = "${createLink(uri: '/', absolute: true)}";
+    
+    function addContactDetail(btn) {
+        console.log("addContactDetail chamado");
+        var $btn = $(btn);
+        var $row = $btn.closest('.contact-detail-row');
+        var hasDeleteButton = $row.find('.btn-remove-detail').length > 0;
+        
+        $.ajax({
+            url: BASE_URL + "contactDetails/create",
+            type: "GET",
+            dataType: "html",
+            success: function (content) {
+                console.log("Sucesso ao adicionar");
+                $('.details-panel').append(content);
+                // Apenas remove o botão de adicionar que foi clicado
+                // O botão de excluir (se existir) continua no lugar
+                $btn.remove();
+            },
+            error: function(xhr, status, error) {
+                console.error("Erro:", error);
+                alert("Erro ao adicionar: " + error);
+            }
+        });
+        return false;
+    }
+
+    function ensureAddButton() {
+        // Verifica se existe algum botão de adicionar
+        if ($('.details-panel .btn-add-detail').length === 0) {
+            var $rows = $('.details-panel .contact-detail-row');
+            if ($rows.length > 0) {
+                // Adiciona o botão de adicionar ao último detail existente
+                var $lastRow = $rows.last();
+                var $buttonsArea = $lastRow.find('.phone-number-area');
+                $buttonsArea.append('<button type="button" class="btn btn-primary btn-add-detail ms-1" onclick="addContactDetail(this); return false;"><i class="fas fa-plus-circle"></i></button>');
+            } else {
+                // Não há nenhum detail, adiciona um form em branco
+                $.ajax({
+                    url: BASE_URL + "contactDetails/create",
+                    type: "GET",
+                    dataType: "html",
+                    success: function (content) {
+                        $('.details-panel').append(content);
+                    }
+                });
+            }
+        }
+    }
+
+    function removeContactDetail(btn, contactId) {
+        console.log("removeContactDetail chamado, id:", contactId);
+        var $btn = $(btn);
+        var $row = $btn.closest(".contact-detail-row");
+
+        if(confirm('Tem certeza que deseja excluir?')) {
+            if(contactId !== undefined && contactId !== null){
+                $.ajax({
+                    url: BASE_URL + "contactDetails/delete/" + contactId,
+                    type: "POST",
+                    dataType: "json",
+                    success: function (content) {
+                        console.log("Resposta:", content);
+                        if(content.success === true){
+                            $row.remove();
+                            ensureAddButton();
+                        } else {
+                            alert(content.info || "Erro ao excluir");
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("Erro:", error);
+                        alert("Erro ao excluir: " + error);
+                    }
+                });
+            } else {
+                $row.remove();
+                ensureAddButton();
+            }
+        }
+        return false;
+    }
+</script>
 
 <script type="text/javascript">
     <g:if test="${flash?.message && flash?.message?.info}">
-    jQuery(document).ready(function () {
-        OCB.messageBox.showMessage(Boolean(${flash.message?.success}), "${flash.message?.info}");
+    $(document).ready(function () {
+        if(typeof OCB !== 'undefined' && OCB.messageBox) {
+            OCB.messageBox.showMessage(Boolean(${flash.message?.success}), "${flash.message?.info}");
+        }
     });
     </g:if>
 </script>
