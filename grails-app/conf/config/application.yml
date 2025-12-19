@@ -1,0 +1,14 @@
+dataSource:
+  driverClassName: org.mariadb.jdbc.Driver
+  dbCreate: update
+  username: root
+  password: 'root123'
+
+hibernate:
+  dialect: org.hibernate.dialect.MariaDBDialect
+
+environments:
+  development:
+    dataSource:
+      dbCreate: update
+      url: "jdbc:mariadb://localhost:3306/meubanco?useUnicode=yes&characterEncoding=UTF-8"
