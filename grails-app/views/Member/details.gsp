@@ -9,16 +9,16 @@
         <g:if test="${member}">
             <table class="table">
                 <tr>
-                    <th class="text-right"><g:message code="first.name"/></th><td class="text-left">${member.firstName}</td>
+                    <th class="text-end"><g:message code="first.name"/></th><td class="text-start">${member.firstName}</td>
                 </tr>
                 <tr>
-                    <th class="text-right"><g:message code="last.name"/></th><td class="text-left">${member.lastName}</td>
+                    <th class="text-end"><g:message code="last.name"/></th><td class="text-start">${member.lastName}</td>
                 </tr>
                 <tr>
-                    <th class="text-right"><g:message code="email"/></th><td class="text-left">${member.email}</td>
+                    <th class="text-end"><g:message code="email"/></th><td class="text-start">${member.email}</td>
                 </tr>
                 <tr>
-                    <th class="text-right"><g:message code="member.type"/></th><td class="text-left">${member.memberType}</td>
+                    <th class="text-end"><g:message code="member.type"/></th><td class="text-start">${member.memberType}</td>
                 </tr>
             </table>
         </g:if>

@@ -16,8 +16,10 @@
                         <g:form controller="authentication" action="doLogin" class="form-signin">
                             <g:textField name="email" class="form-control" placeholder="Email" required="required" />
                             <g:passwordField name="password" class="form-control" placeholder="Password" required="required" />
-                            <g:submitButton class="btn btn-lg btn-primary btn-block" name="login" value="Login"/>
-                            <g:link controller="authentication" action="registration" class="btn btn-lg btn-primary btn-block">Member Registration</g:link>
+                            <div class="d-grid gap-2">
+                                <g:submitButton class="btn btn-lg btn-primary" name="login" value="Login"/>
+                                <g:link controller="authentication" action="registration" class="btn btn-lg btn-primary">Member Registration</g:link>
+                            </div>
                         </g:form>
                     </div>
                 </div>

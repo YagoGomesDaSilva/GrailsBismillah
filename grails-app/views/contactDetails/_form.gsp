@@ -1,24 +1,24 @@
-<div class="form-group contact-detail-row">
-    <div class="form-inline phone-number-area">
+<div class="mb-3 contact-detail-row">
+    <div class="d-flex flex-wrap align-items-center gap-2 phone-number-area">
         <g:if test="${details}">
             <g:hiddenField name="detailsId" value="${details.id}"/>
         </g:if>
-        <div class="form-group">
+        <div>
             <UIHelper:contactType value="${details?.type}"/>
         </div>
-        <div class="form-group mx-sm-3">
+        <div>
             <g:textField name="mobile" class="form-control" placeholder="Mobile Number" value="${details?.mobile}"/>
         </div>
-        <div class="form-group mx-sm-3">
+        <div>
             <g:textField name="phone" class="form-control" placeholder="Phone Number" value="${details?.phone}"/>
         </div>
-        <div class="form-group mx-sm-3">
+        <div>
             <g:textField name="email" class="form-control" placeholder="Email" value="${details?.email}"/>
         </div>
-        <div class="form-group mx-sm-3">
+        <div>
             <g:textField name="website" class="form-control" placeholder="Website" value="${details?.website}"/>
         </div>
-        <div class="form-group mx-sm-3">
+        <div>
             <g:textField name="address" class="form-control" placeholder="Address" value="${details?.address}"/>
         </div>
         <g:if test="${details}">

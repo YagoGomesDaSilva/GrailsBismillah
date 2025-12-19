@@ -8,7 +8,7 @@
         <g:if test="${contactGroup}">
             <table class="table">
                 <tr>
-                    <th class="text-right">Name</th><td class="text-left">${contactGroup.name}</td>
+                    <th class="text-end">Name</th><td class="text-start">${contactGroup.name}</td>
                 </tr>
             </table>
         </g:if>

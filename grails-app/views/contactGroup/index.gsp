@@ -12,7 +12,7 @@
     </div>
     <div class="card-body">
         <table class="table table-bordered">
-            <thead class="thead-dark">
+            <thead class="table-dark">
             <tr>
                 <g:sortableColumn property="name" title="${g.message(code: "name")}"/>
                 <th class="action-row"><g:message code="action"/></th>

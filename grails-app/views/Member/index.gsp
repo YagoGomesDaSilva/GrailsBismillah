@@ -11,11 +11,9 @@
             <div class="btn-group">
                 <g:form controller="member" action="index" method="GET">
                     <div class="input-group" id="search-area">
-                        <g:select name="colName" class="form-control" from="[firstName: 'First Name', lastName: 'Last Name', email: 'Email']" value="${params?.colName}" optionKey="key" optionValue="value"/>
+                        <g:select name="colName" class="form-select" from="[firstName: 'First Name', lastName: 'Last Name', email: 'Email']" value="${params?.colName}" optionKey="key" optionValue="value"/>
                         <g:textField name="colValue" class="form-control" value="${params?.colValue}"/>
-                        <span class="input-group-btn">
-                            <button class="btn btn-outline-secondary" type="submit">Search</button>
-                        </span>
+                        <button class="btn btn-secondary" type="submit">Search</button>
                     </div>
                 </g:form>
             </div>
@@ -30,7 +28,7 @@
     %{--Table Panel--}%
     <div class="card-body">
         <table class="table table-bordered">
-            <thead class="thead-dark">
+            <thead class="table-dark">
             <tr>
                 <g:sortableColumn property="firstName" title="${g.message(code: "first.name")}"/>
                 <g:sortableColumn property="lastName" title="${g.message(code: "last.name")}"/>

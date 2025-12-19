@@ -29,7 +29,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark rounded">
             <a class="navbar-brand ms-3" href="#">Grails Online Contacts Book</a>
             <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
-                    data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false"
+                    data-bs-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false"
                     aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -39,7 +39,7 @@
 
     <div class="container-fluid">
         <div class="row">
-            <main role="main" class="col-sm-12 ml-sm-auto col-md-12 pt-3">
+            <main role="main" class="col-sm-12 ms-sm-auto col-md-12 pt-3">
                 <g:layoutBody/>
             </main>
         </div>
