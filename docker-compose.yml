@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  mariadb:
+    image: mariadb:latest
+    container_name: mariadb-container
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: root123
+      MARIADB_DATABASE: meubanco
+      MARIADB_USER: user_app
+      MARIADB_PASSWORD: "123456"
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  grails-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: grails-app
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./grails-app:/app/grails-app
+      - ./src:/app/src
+    environment:
+      - GRAILS_ENV=development
+      - DB_HOST=mariadb
+      - DB_PORT=3306
+      - DB_NAME=meubanco
+      - DB_USER=root
+      - DB_PASSWORD=root123
+    depends_on:
+      mariadb:
+        condition: service_healthy
+
+volumes:
+  mariadb_data:
+
+
+# Subir todos os serviços
+#docker-compose up --build
+
+# Ou em background
+#docker-compose up -d --build
+
+# Verificar status dos containers
+#docker-compose ps
+
+# Ver logs do banco
+#docker-compose logs mariadb
+
+# Ver logs da aplicação
+#docker-compose logs grails-app
