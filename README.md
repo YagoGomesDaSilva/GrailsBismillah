@@ -4,94 +4,94 @@
   <img src="https://grails.org/images/grails.svg" alt="Grails Logo" width="120"/>
 </p>
 
-> **Um sistema completo de agenda de contatos desenvolvido com Grails 7.0.4, seguindo as melhores pr�ticas do framework e com suporte a Docker para facilitar a implanta��o.**
+> **Um sistema completo de agenda de contatos desenvolvido com Grails 7.0.4, seguindo as melhores práticas do framework e com suporte a Docker para facilitar a implantação.**
 
 ---
 
-##  �ndice
+##  Índice
 
 - [Sobre o Projeto](#-sobre-o-projeto)
 - [Funcionalidades](#-funcionalidades)
 - [Tecnologias Utilizadas](#-tecnologias-utilizadas)
 - [Arquitetura do Sistema](#-arquitetura-do-sistema)
-- [Pr�-requisitos](#-pr�-requisitos)
+- [Pré-requisitos](#-pré-requisitos)
 - [Como Executar](#-como-executar)
 - [Estrutura do Projeto](#-estrutura-do-projeto)
 - [Relacionamentos do Banco de Dados](#-relacionamentos-do-banco-de-dados)
 - [Peculiaridades e Destaques](#-peculiaridades-e-destaques)
-- [Documenta��o Oficial](#-documenta��o-oficial)
+- [Documentação Oficial](#-documentação-oficial)
 
 ---
 
 ##  Sobre o Projeto
 
-O **GrailsBismillah** � uma aplica��o web de **agenda de contatos** desenvolvida com o framework **Grails 7.0.4**. O sistema permite que usu�rios se cadastrem, fa�am login e gerenciem seus pr�prios contatos de forma organizada, com suporte a:
+O **GrailsBismillah** É uma aplicação web de **agenda de contatos** desenvolvida com o framework **Grails 7.0.4**. O sistema permite que usuários se cadastrem, façam login e gerenciem seus próprios contatos de forma organizada, com suporte a:
 
-- M�ltiplos detalhes por contato (telefone, email, endere�o, etc.)
-- Organiza��o de contatos em grupos personalizados
-- Sistema de autentica��o e autoriza��o seguro
+- Múltiplos detalhes por contato (telefone, email, endereço, etc.)
+- Organização de contatos em grupos personalizados
+- Sistema de autenticação e autorização seguro
 - Interface responsiva com Bootstrap 5
 
 ###  Objetivo
 
-Este projeto foi desenvolvido como uma aplica��o de refer�ncia para aprender e demonstrar os conceitos fundamentais do Grails, incluindo:
+Este projeto foi desenvolvido como uma aplicação de referência para aprender e demonstrar os conceitos fundamentais do Grails, incluindo:
 
 - Domain Classes com relacionamentos complexos (1:N e N:M)
-- Interceptors para controle de autentica��o
-- Services para l�gica de neg�cio
+- Interceptors para controle de autenticação
+- Services para lógica de negócio
 - Views GSP com layouts Sitemesh
-- Integra��o com Docker e MariaDB
+- Integração com Docker e MariaDB
 
 ---
 
 ##  Funcionalidades
 
-| Funcionalidade | Descri��o |
+| Funcionalidade | Descrição |
 |----------------|-----------|
-|  **Autentica��o** | Sistema de login/logout com criptografia MD5 |
-|  **Registro de Usu�rio** | Cadastro de novos membros |
+|  **Autenticação** | Sistema de login/logout com criptografia MD5 |
+|  **Registro de Usuário** | Cadastro de novos membros |
 |  **Gerenciamento de Contatos** | CRUD completo de contatos |
-|  **Detalhes do Contato** | M�ltiplos telefones, emails, endere�os por contato |
-|  **Grupos de Contatos** | Organiza��o em categorias (fam�lia, trabalho, etc.) |
-|  **Dashboard** | Painel inicial com vis�o geral |
-|  **Internacionaliza��o (i18n)** | Suporte a m�ltiplos idiomas |
+|  **Detalhes do Contato** | Múltiplos telefones, emails, endereços por contato |
+|  **Grupos de Contatos** | Organização em categorias (família, trabalho, etc.) |
+|  **Dashboard** | Painel inicial com visão geral |
+|  **Internacionalização (i18n)** | Suporte a múltiplos idiomas |
 
 ---
 
 ##  Tecnologias Utilizadas
 
 ### Backend
-| Tecnologia | Vers�o | Descri��o |
+| Tecnologia | Versão | Descrição |
 |------------|--------|-----------|
 | **Grails** | 7.0.4 | Framework full-stack para JVM |
-| **Groovy** | - | Linguagem de programa��o |
+| **Groovy** | - | Linguagem de programação |
 | **Java** | 17 | JDK base |
-| **GORM/Hibernate 5** | - | ORM para persist�ncia |
+| **GORM/Hibernate 5** | - | ORM para persistência |
 | **Spring Boot** | - | Base do Grails 7.x |
 
 ### Frontend
-| Tecnologia | Vers�o | Descri��o |
+| Tecnologia | Versão | Descrição |
 |------------|--------|-----------|
 | **GSP** | - | Groovy Server Pages (templates) |
 | **Bootstrap** | 5.3.3 | Framework CSS |
-| **Bootstrap Icons** | 1.11.3 | Biblioteca de �cones |
+| **Bootstrap Icons** | 1.11.3 | Biblioteca de ícones |
 | **jQuery** | 3.7.1 | Biblioteca JavaScript |
 | **Sitemesh** | - | Sistema de layouts do Grails |
 
 ### Banco de Dados
-| Tecnologia | Ambiente | Descri��o |
+| Tecnologia | Ambiente | Descrição |
 |------------|----------|-----------|
-| **H2** | Development/Test | Banco em mem�ria |
+| **H2** | Development/Test | Banco em memória |
 | **MariaDB** | Production/Docker | Banco relacional |
 | **HikariCP** | - | Connection pool de alta performance |
 
 ### DevOps e Ferramentas
-| Tecnologia | Descri��o |
+| Tecnologia | Descrição |
 |------------|-----------|
-| **Docker** | Containeriza��o |
-| **Docker Compose** | Orquestra��o de containers |
-| **Gradle** | Build tool e gerenciador de depend�ncias |
-| **Asset Pipeline** | Compila��o de assets (CSS/JS) |
+| **Docker** | Containerização |
+| **Docker Compose** | Orquestração de containers |
+| **Gradle** | Build tool e gerenciador de dependências |
+| **Asset Pipeline** | Compilação de assets (CSS/JS) |
 
 ---
 
@@ -114,7 +114,7 @@ Este projeto foi desenvolvido como uma aplica��o de refer�ncia para aprend
          
                                                               
    
-                INTERCEPTORS (Seguran�a)                   
+                INTERCEPTORS (Segurança)                   
     SecurityInterceptor | MemberInterceptor                
    
 
@@ -149,13 +149,13 @@ Este projeto foi desenvolvido como uma aplica��o de refer�ncia para aprend
 
 ---
 
-##  Pr�-requisitos
+##  Pré-requisitos
 
-### Para execu��o local:
+### Para execução local:
 - **JDK 17** ou superior
-- **Gradle** (inclu�do via wrapper)
+- **Gradle** (incluído via wrapper)
 
-### Para execu��o com Docker:
+### Para execução com Docker:
 - **Docker** instalado
 - **Docker Compose** instalado
 
@@ -163,22 +163,22 @@ Este projeto foi desenvolvido como uma aplica��o de refer�ncia para aprend
 
 ##  Como Executar
 
-###  Op��o 1: Docker Compose (Recomendado)
+###  Opção 1: Docker Compose (Recomendado)
 
 A forma mais simples de rodar o projeto completo com banco de dados MariaDB:
 
 ```bash
-# Clonar o reposit�rio
+# Clonar o repositório
 git clone <url-do-repositorio>
 cd GrailsBismillah
 
-# Subir todos os servi�os (MariaDB + Aplica��o)
+# Subir todos os serviços (MariaDB + Aplicação)
 docker-compose up -d --build
 
-# Verificar se os containers est�o rodando
+# Verificar se os containers estão rodando
 docker-compose ps
 
-# Ver logs da aplica��o
+# Ver logs da aplicação
 docker-compose logs -f grails-app
 
 # Ver logs do banco de dados
@@ -188,20 +188,20 @@ docker-compose logs mariadb
  **Acesse:** http://localhost:8080
 
 #### Credenciais do Banco (Docker):
-| Par�metro | Valor |
+| Parâmetro | Valor |
 |-----------|-------|
 | Host | localhost |
 | Porta | 3306 |
 | Database | meubanco |
-| Usu�rio | user_app |
+| Usuário | user_app |
 | Senha | 123456 |
 | Root Password | root123 |
 
 ---
 
-###  Op��o 2: Execu��o Local (Desenvolvimento)
+###  Opção 2: Execução Local (Desenvolvimento)
 
-Usando o wrapper do Gradle com banco H2 em mem�ria:
+Usando o wrapper do Gradle com banco H2 em memória:
 
 ```bash
 # Windows
@@ -215,7 +215,7 @@ Usando o wrapper do Gradle com banco H2 em mem�ria:
 
 ---
 
-###  Op��o 3: Usando o Grails Wrapper
+###  Opção 3: Usando o Grails Wrapper
 
 ```bash
 # Windows
@@ -233,7 +233,7 @@ Usando o wrapper do Gradle com banco H2 em mem�ria:
 .\gradlew bootWar
 ```
 
-O arquivo ser� gerado em build/libs/.
+O arquivo será gerado em build/libs/.
 
 ---
 
@@ -242,14 +242,14 @@ O arquivo ser� gerado em build/libs/.
 ```
 GrailsBismillah/
  grails-app/
-    assets/                    # Recursos est�ticos
+    assets/                    # Recursos estéticos
        images/
        javascripts/
        stylesheets/
    
-    conf/                      # Configura��es
+    conf/                      # Configuraçães
        application.yml        # Config principal
-       logback-spring.xml     # Configura��o de logs
+       logback-spring.xml     # Configuração de logs
        spring/                # Beans do Spring
    
     controllers/               # Controllers (MVC)
@@ -270,12 +270,12 @@ GrailsBismillah/
            ContactGroup.groovy
            Member.groovy
    
-    i18n/                      # Internacionaliza��o
+    i18n/                      # Internacionalização
        messages.properties
        messages_pt_BR.properties
        ... (16+ idiomas)
    
-    services/                  # Camada de neg�cio
+    services/                  # Camada de negócio
        com/hmtmcse/ocb/
            AppInitializationService.groovy
            AuthenticationService.groovy
@@ -295,12 +295,12 @@ GrailsBismillah/
 
  src/
     main/groovy/               # Classes auxiliares
-    test/groovy/               # Testes unit�rios
-    integration-test/groovy/   # Testes de integra��o
+    test/groovy/               # Testes unitários
+    integration-test/groovy/   # Testes de integração
 
- docker-compose.yml             # Orquestra��o Docker
- Dockerfile                     # Imagem da aplica��o
- build.gradle                   # Depend�ncias e build
+ docker-compose.yml             # Orquestração Docker
+ Dockerfile                     # Imagem da aplicação
+ build.gradle                   # Dependências e build
  gradle.properties              # Propriedades do Gradle
 ```
 
@@ -349,18 +349,18 @@ GrailsBismillah/
 
 ### Cardinalidades
 
-| Rela��o | Tipo | Descri��o |
+| Relação | Tipo | Descrição |
 |---------|------|-----------|
-| **Member  Contact** | 1:N | Um membro possui v�rios contatos |
-| **Member  ContactGroup** | 1:N | Um membro possui v�rios grupos |
-| **Contact  ContactDetails** | 1:N | Um contato possui v�rios detalhes (cascade: all-delete-orphan) |
-| **Contact  ContactGroup** | N:M | Contatos podem pertencer a m�ltiplos grupos (tabela de jun��o autom�tica) |
+| **Member  Contact** | 1:N | Um membro possui vários contatos |
+| **Member  ContactGroup** | 1:N | Um membro possui vários grupos |
+| **Contact  ContactDetails** | 1:N | Um contato possui vários detalhes (cascade: all-delete-orphan) |
+| **Contact  ContactGroup** | N:M | Contatos podem pertencer a máltiplos grupos (tabela de junção automática) |
 
 ---
 
 ##  Peculiaridades e Destaques
 
-### 1.  Sistema de Seguran�a com Interceptors
+### 1.  Sistema de Segurança com Interceptors
 
 O projeto utiliza **Interceptors** do Grails para controle de acesso:
 
@@ -381,8 +381,8 @@ class SecurityInterceptor {
 }
 ```
 
-- Todas as rotas s�o protegidas **exceto** as de autentica��o
-- Redirecionamento autom�tico para login
+- Todas as rotas são protegidas **exceto** as de autenticação
+- Redirecionamento automático para login
 
 ---
 
@@ -400,7 +400,7 @@ def beforeUpdate() {
 ```
 
 - **beforeInsert**: Criptografa antes de salvar novo registro
-- **beforeUpdate**: Mant�m a senha criptografada nas atualiza��es
+- **beforeUpdate**: Mantém a senha criptografada nas atualizaçães
 
 ---
 
@@ -413,16 +413,16 @@ static mapping = {
 }
 ```
 
-- Ao deletar um **Contact**, todos os **ContactDetails** s�o removidos automaticamente
-- Evita registros �rf�os no banco de dados
+- Ao deletar um **Contact**, todos os **ContactDetails** são removidos automaticamente
+- Evita registros órfãos no banco de dados
 
 ---
 
 ### 4.  Sistema de Layouts Sitemesh
 
-O projeto utiliza o sistema de templates do Grails com tr�s n�veis:
+O projeto utiliza o sistema de templates do Grails com três níveis:
 
-| Tag | Uso | Descri��o |
+| Tag | Uso | Descrição |
 |-----|-----|-----------|
 | g:layoutBody/ | Layout | Injeta o corpo da view |
 | content tag="..."  | View | Define blocos nomeados |
@@ -431,28 +431,28 @@ O projeto utiliza o sistema de templates do Grails com tr�s n�veis:
 
 ---
 
-### 5.  Internacionaliza��o Completa
+### 5.  Internacionalização Completa
 
 O projeto suporta **16+ idiomas** incluindo:
--  Portugu�s (Brasil)
--  Portugu�s (Portugal)
--  Ingl�s
+-  Português (Brasil)
+-  Português (Portugal)
+-  Inglês
 -  Espanhol
--  Franc�s
--  Alem�o
--  Japon�s
--  Chin�s
+-  Francês
+-  Alemão
+-  Japonês
+-  Chinês
 - E mais...
 
 ---
 
-### 6.  Configura��o Docker Multi-Stage
+### 6.  Configuração Docker Multi-Stage
 
-O projeto est� preparado para deploy em containers:
+O projeto está preparado para deploy em containers:
 
-- **MariaDB**: Banco de dados de produ��o
-- **Grails App**: Aplica��o containerizada
-- **Health Checks**: Verifica��o autom�tica de sa�de do banco
+- **MariaDB**: Banco de dados de produção
+- **Grails App**: Aplicação containerizada
+- **Health Checks**: Verificação automática de saúde do banco
 - **Volumes Persistentes**: Dados do banco preservados
 
 ---
@@ -463,8 +463,8 @@ O projeto est� preparado para deploy em containers:
 developmentOnly "org.springframework.boot:spring-boot-devtools"
 ```
 
-- Recarregamento autom�tico durante desenvolvimento
-- Sem necessidade de reiniciar a aplica��o
+- Recarregamento automático durante desenvolvimento
+- Sem necessidade de reiniciar a aplicação
 
 ---
 
@@ -474,12 +474,12 @@ developmentOnly "org.springframework.boot:spring-boot-devtools"
 runtimeOnly "com.zaxxer:HikariCP"
 ```
 
-- **HikariCP**: O connection pool mais r�pido para JVM
-- Gerenciamento eficiente de conex�es com o banco
+- **HikariCP**: O connection pool mais rápido para JVM
+- Gerenciamento eficiente de conexões com o banco
 
 ---
 
-##  Documenta��o Oficial
+##  Documentação Oficial
 
 ### Grails 7.0.4
 - [User Guide](https://grails.apache.org/docs/7.0.4/guide/index.html)
@@ -494,9 +494,9 @@ runtimeOnly "com.zaxxer:HikariCP"
 
 ---
 
-##  Licen�a
+##  Licença
 
-Este projeto � de uso educacional e livre para estudos.
+Este projeto é de uso educacional e livre para estudos.
 
 ---
 
