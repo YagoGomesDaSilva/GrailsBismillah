@@ -1,7 +1,7 @@
 #  GrailsBismillah - Sistema de Gerenciamento de Contatos
 
 <p align="center">
-  <img src="https://grails.org/images/grails.svg" alt="Grails Logo" width="120"/>
+  <img src="https://grails.apache.org/images/grails_logo.svg" alt="Grails Logo" width="120"/>
 </p>
 
 > **Um sistema completo de agenda de contatos desenvolvido com Grails 7.0.4, seguindo as melhores práticas do framework e com suporte a Docker para facilitar a implantação.**
