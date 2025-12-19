@@ -9,7 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <asset:link rel="icon" href="favicon.ico" type="image/x-ico"/>
     <asset:stylesheet src="application.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.css">
 
     <g:layoutHead/>
 </head>
@@ -50,7 +49,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.js"></script>
 <asset:javascript src="application.js"/>
 
 <script type="text/javascript">
@@ -136,16 +134,6 @@
         }
         return false;
     }
-</script>
-
-<script type="text/javascript">
-    <g:if test="${flash?.message && flash?.message?.info}">
-    $(document).ready(function () {
-        if(typeof OCB !== 'undefined' && OCB.messageBox) {
-            OCB.messageBox.showMessage(Boolean(${flash.message?.success}), "${flash.message?.info}");
-        }
-    });
-    </g:if>
 </script>
 
 </body>
